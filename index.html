@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ruta profesional interactiva basada en el portafolio oficial de certificaciones ISTQB, con checklist persistente y acceso a syllabi oficiales.">
+    <meta name="theme-color" content="#143A61">
+    <title>Ruta Profesional QA · ISTQB</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#checklist">Saltar al checklist</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="source-bar">
+          <span class="source-bar__brand">Ruta Profesional QA</span>
+          <span>
+            Portafolio verificado el 20/08/2026 ·
+            <a href="https://istqb.org/what-we-do/" target="_blank" rel="noopener noreferrer">Fuente oficial ISTQB ↗</a>
+          </span>
+        </div>
+
+        <div class="hero">
+          <div>
+            <p class="eyebrow">Mapa personal de certificaciones</p>
+            <h1>Construye tu ruta <span>paso a paso.</span></h1>
+            <p class="hero__intro">
+              Explora la rueda, abre cada syllabus y marca únicamente las certificaciones que ya completaste.
+              Los colores originales se mantienen hasta que cada hito pasa a verde.
+            </p>
+          </div>
+
+          <aside class="progress-card" aria-label="Progreso global">
+            <div class="progress-card__top">
+              <div>
+                <p class="progress-card__label">Tu avance</p>
+                <p class="progress-card__number"><span id="completed-count">0</span> / <span id="total-count">28</span></p>
+              </div>
+              <span class="progress-card__percent" id="progress-percent">0%</span>
+            </div>
+            <div
+              class="progress-track"
+              id="overall-progress"
+              role="progressbar"
+              aria-label="Certificaciones completadas"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+            ></div>
+            <p class="progress-card__hint">El progreso se guarda en este navegador mediante localStorage.</p>
+            <p class="visually-hidden" id="progress-live" aria-live="polite">0 de 28 certificaciones completadas.</p>
+          </aside>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="content-section wheel-section" aria-labelledby="wheel-heading">
+        <div class="section-inner">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Portafolio ISTQB 2026</p>
+              <h2 id="wheel-heading">Una rueda viva para orientar tu carrera</h2>
+            </div>
+            <p>
+              Pasa el cursor por cualquier certificación para verla en detalle. Haz clic en el segmento para abrir su PDF.
+            </p>
+          </div>
+
+          <div class="wheel-card">
+            <div class="wheel-stage">
+              <svg
+                id="career-wheel"
+                viewBox="0 0 1425 1265"
+                role="img"
+                aria-labelledby="wheel-svg-title wheel-svg-description"
+              >
+                <title id="wheel-svg-title">Rueda interactiva del portafolio de certificaciones ISTQB</title>
+                <desc id="wheel-svg-description">
+                  La rueda contiene Foundation en el centro, Core Advanced y Core Expert en la parte superior,
+                  Testing Specialist en la parte inferior y áreas de habilidades de apoyo y alianzas a los lados.
+                </desc>
+                <defs></defs>
+                <g id="wheel-content"></g>
+              </svg>
+              <div class="wheel-tooltip" id="wheel-tooltip" role="status" hidden></div>
+            </div>
+            <p class="wheel-caption">
+              Verde significa completada. Sin marcar conserva el color original; no existe un estado “en progreso”.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section checklist-section" id="checklist" aria-labelledby="checklist-heading">
+        <div class="section-inner">
+          <div class="checklist-toolbar">
+            <div>
+              <p class="section-kicker">Checklist personal</p>
+              <h2 id="checklist-heading">Marca lo que ya conquistaste</h2>
+            </div>
+            <button class="button-secondary" id="reset-progress" type="button" disabled>Borrar progreso</button>
+          </div>
+
+          <p class="storage-notice" id="storage-notice" role="alert" hidden>
+            Este navegador bloqueó el almacenamiento local. Puedes usar el checklist durante esta sesión, pero no se conservará al cerrar la página.
+          </p>
+
+          <noscript>
+            <p class="storage-notice">Activa JavaScript para usar la rueda interactiva, el checklist y el guardado de progreso.</p>
+          </noscript>
+
+          <div class="certification-groups" id="certification-groups"></div>
+
+          <p class="copyright-note">
+            <strong>Sobre los PDFs:</strong> todos los syllabi se abren directamente desde <strong>istqb.org</strong> y requieren conexión a internet.
+            No se almacenan PDFs dentro de este proyecto. Consulta <strong>GUIA.md</strong> y <strong>pdf-url-review/urls-pdfs.csv</strong>
+            para revisar las URLs oficiales y su vigencia.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>Sitio personal e independiente. ISTQB® es una marca registrada de International Software Testing Qualifications Board.</p>
+        <a href="https://istqb.org/certifications/" target="_blank" rel="noopener noreferrer">Ver certificaciones oficiales ↗</a>
+      </div>
+    </footer>
+
+    <script src="js/certifications.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </body>
+</html>
