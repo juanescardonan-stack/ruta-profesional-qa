@@ -17,6 +17,7 @@ window.ISTQB_PORTFOLIO = {
       title: "Foundation",
       subtitle: "El punto de partida",
       color: "#143A61",
+      darkColor: "#8fc3ea",
       certifications: [
         {
           id: "ctfl",
@@ -39,6 +40,7 @@ window.ISTQB_PORTFOLIO = {
       title: "Core Advanced",
       subtitle: "Profundización en la práctica profesional",
       color: "#328EC1",
+      darkColor: "#6fc3ec",
       certifications: [
         {
           id: "ctal-ta",
@@ -122,6 +124,7 @@ window.ISTQB_PORTFOLIO = {
       title: "Core Expert",
       subtitle: "Liderazgo y mejora organizacional",
       color: "#3F7A86",
+      darkColor: "#6fc5d2",
       certifications: [
         {
           id: "ctel-tm-otm",
@@ -205,6 +208,7 @@ window.ISTQB_PORTFOLIO = {
       title: "Testing Specialist",
       subtitle: "Tecnologías, enfoques y dominios",
       color: "#2E4B93",
+      darkColor: "#9fb3f0",
       certifications: [
         {
           id: "ctal-att",

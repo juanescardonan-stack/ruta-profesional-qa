@@ -6,6 +6,20 @@
     <meta name="description" content="Ruta profesional interactiva basada en el portafolio oficial de certificaciones ISTQB, con checklist persistente y acceso a syllabi oficiales.">
     <meta name="theme-color" content="#143A61">
     <title>Ruta Profesional QA · ISTQB</title>
+    <script>
+      // Aplica el tema antes del primer pintado para evitar el destello del tema claro.
+      (function () {
+        var KEY = "ruta-profesional-qa-theme-v1";
+        var saved = null;
+        try { saved = localStorage.getItem(KEY); } catch (error) { /* almacenamiento bloqueado */ }
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", theme === "dark" ? "#0b1e33" : "#143A61");
+      })();
+    </script>
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
@@ -15,10 +29,25 @@
       <div class="header-inner">
         <div class="source-bar">
           <span class="source-bar__brand">Ruta Profesional QA</span>
-          <span>
-            Portafolio verificado el 20/08/2026 ·
-            <a href="https://istqb.org/what-we-do/" target="_blank" rel="noopener noreferrer">Fuente oficial ISTQB ↗</a>
-          </span>
+          <div class="source-bar__meta">
+            <span>
+              Portafolio verificado el 20/08/2026 ·
+              <a href="https://istqb.org/what-we-do/" target="_blank" rel="noopener noreferrer">Fuente oficial ISTQB ↗</a>
+            </span>
+            <button class="theme-toggle" id="theme-toggle" type="button" role="switch" aria-checked="false">
+              <span class="theme-toggle__track" aria-hidden="true">
+                <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+                </svg>
+                <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+                </svg>
+                <span class="theme-toggle__thumb"></span>
+              </span>
+              <span class="theme-toggle__text">Modo oscuro</span>
+            </button>
+          </div>
         </div>
 
         <div class="hero">
@@ -129,6 +158,7 @@
       </div>
     </footer>
 
+    <script src="js/theme.js" defer></script>
     <script src="js/certifications.js" defer></script>
     <script src="js/app.js" defer></script>
   </body>

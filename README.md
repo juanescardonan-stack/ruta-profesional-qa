@@ -12,6 +12,7 @@ https://USUARIO.github.io/ruta-profesional-qa/
 - Sitio estático: HTML, CSS y JavaScript sin dependencias, sin build y sin servidor.
 - El catálogo completo de certificaciones vive en `js/certifications.js`.
 - El progreso del checklist se guarda con `localStorage`, por navegador y dispositivo.
+- Modo claro y oscuro con interruptor en el encabezado. La preferencia se guarda en `localStorage` (clave `ruta-profesional-qa-theme-v1`) y, si no hay elección, sigue la configuración del sistema.
 - Ningún PDF se almacena en el repositorio: todos los enlaces apuntan a `istqb.org`.
 
 ## Documentación

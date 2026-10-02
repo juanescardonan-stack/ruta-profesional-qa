@@ -416,6 +416,9 @@
       section.className = `certification-group certification-group--${group.id}`;
       section.dataset.groupId = group.id;
       section.style.setProperty("--group-color", group.color);
+      if (group.darkColor) {
+        section.style.setProperty("--group-ink-dark", group.darkColor);
+      }
       section.id = `grupo-${group.id}`;
 
       const heading = document.createElement("div");

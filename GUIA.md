@@ -16,7 +16,8 @@ La conexión a internet es necesaria al abrir cualquier PDF, ya que todos se car
 - Al marcar una casilla, únicamente su segmento cambia a verde.
 - Al desmarcarla, el segmento recupera su color original.
 - No existe estado “en progreso”. Solo hay pendiente (color original) y completada (verde).
-- El botón `Borrar progreso` desmarca todo después de pedir confirmación.
+- El botón `Borrar progreso` desmarca todo después de pedir confirmación. No cambia el tema claro/oscuro.
+- El interruptor `Modo oscuro` del encabezado alterna el tema. Tu elección se recuerda en este navegador; si nunca lo tocas, el sitio sigue la preferencia de tu sistema operativo.
 
 El progreso se guarda con `localStorage` en el navegador y equipo donde abriste el archivo. Si abres el sitio en otro navegador, otro equipo, una ventana privada o desde una ruta distinta, ese contexto tendrá su propio progreso.
 
